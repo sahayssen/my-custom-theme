@@ -26,10 +26,10 @@ USAGE EXAMPLE:
 
   /* Mobile-first: smaller text */
   .article-body {
-    font-family: var(--font-sans);
+    font-family: var(---font-article);
     font-size: var(--font-size-base);
     line-height: var(--leading-relaxed);
-    color: var(--color-text);
+    color: var(--color-darkgreen);
   }
 
   /* Paragraph styling */
@@ -43,7 +43,7 @@ USAGE EXAMPLE:
 
   /* Links within article body */
   .article-body :global(a) {
-    color: var(--color-dark);
+    color: var(--color-beige);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
@@ -54,21 +54,21 @@ USAGE EXAMPLE:
 
   /* Subheadings within article */
   .article-body :global(h2) {
-    font-family: var(--font-serif);
+    font-family: var(--font-article);
     font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-normal);
     margin-top: var(--spacing-xl);
     margin-bottom: var(--spacing-sm);
-    color: var(--color-dark);
+    color: var(--color-darkgreen);
   }
 
   .article-body :global(h3) {
-    font-family: var(--font-serif);
+    font-family: var(--font-article);
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-normal);
     margin-top: var(--spacing-lg);
     margin-bottom: var(--spacing-sm);
-    color: var(--color-dark);
+    color: var(--color-darkgreen);
   }
 
   /* Block quotes - NYCity style with blue left border */
@@ -79,7 +79,7 @@ USAGE EXAMPLE:
     font-style: italic;
     font-size: var(--font-size-lg);
     line-height: var(--leading-normal);
-    color: var(--color-dark);
+    color: var(--color-darkgreen);
   }
 
   .article-body :global(blockquote p) {

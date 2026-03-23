@@ -34,6 +34,8 @@ USAGE EXAMPLE:
   );
 </script>
 
+<div class="continue">
+<div>
 <figure class="image-figure" class:size-full={size === 'full'} class:size-large={size === 'large'} class:size-medium={size === 'medium'} class:size-small={size === 'small'}>
   <img 
     src={resolvedSrc} 
@@ -41,7 +43,6 @@ USAGE EXAMPLE:
     class="image"
     loading="lazy"
   />
-  
   {#if caption || credit}
     <figcaption class="caption-container">
       {#if caption}
@@ -53,13 +54,17 @@ USAGE EXAMPLE:
     </figcaption>
   {/if}
 </figure>
+</div>
+</div>
 
 <style lang="scss">
   @use '../styles' as *;
 
   .image-figure {
-    margin: var(--spacing-md) 0; // Mobile-first: smaller margin
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0; // Mobile-first: smaller margin
 
     @include tablet {
       margin: var(--spacing-lg) 0; // Larger screens: bigger margin
@@ -87,28 +92,29 @@ USAGE EXAMPLE:
   }
 
   .image {
+    display: flex;
     width: 100%;
     height: auto;
-    display: block;
   }
 
   .caption-container {
-    display: flex;
+    display: stretch;
     flex-direction: column;
+    align-items: flex-end;
     gap: var(--spacing-xs);
     padding-top: var(--spacing-xs);
     margin-top: var(--spacing-xs);
   }
-
-  .caption {
-    font-size: var(--font-size-sm);
-    line-height: var(--leading-caption);
-    color: var(--color-text);
+ .continue{
+    display: flex;
+    background-color: var(--color-btn-bg) 
   }
+  .container-image{
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0;
+  color: var(--color-beige)
+}
 
-  .credit {
-    font-size: var(--font-size-xs);
-    color: var(--color-medium-gray);
-    font-style: italic;
-  }
 </style>

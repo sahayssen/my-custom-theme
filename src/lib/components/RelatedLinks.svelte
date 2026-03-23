@@ -26,6 +26,7 @@ USAGE EXAMPLE:
     <h2 id="related-title" class="related-title">
       <span class="title-text">{title}</span>
     </h2>
+  <div class="boxy">
     <ul class="link-list">
       {#each links as link (link.href)}
         <li class="link-item">
@@ -35,39 +36,41 @@ USAGE EXAMPLE:
         </li>
       {/each}
     </ul>
+    
   </aside>
 {/if}
+
 
 <style lang="scss">
   @use '../styles' as *;
 
+  .boxy{
+    display: block;
+    background-color: var(--color-dark); 
+    padding: var(--spacing-md);
+  }
+
   .related-links {
-    margin-top: var(--spacing-xl);
+    margin-top: var(--spacing-xxl);
   }
 
   .related-title {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    font-family: var(--font-sans);
-    font-size: var(--font-size-sm);
+    display: block;
+    align-items: center; 
+    font-family: var(--font-menu);
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-wider);
     color: var(--color-dark);
-    margin-bottom: var(--spacing-md);
-
-    &::after {
-      content: '';
-      flex: 1;
-      height: var(--border-width-divider);
-      background-color: var(--color-accent);
-    }
+    background-color: var(--color-btn-color);
+    padding: var(--spacing-md);
+    margin-bottom: 0;
   }
 
   .link-list {
     list-style: none;
-    margin: 0;
+    margin: var(--spacing-sm);
     padding: 0;
   }
 
@@ -84,18 +87,18 @@ USAGE EXAMPLE:
   }
 
   .link {
-    font-family: var(--font-serif);
-    font-size: var(--font-size-lg); // Mobile-first: smaller size
+    font-family: var(--font-menu);
+    font-size: var(--font-size-md); // Mobile-first: smaller size
     font-weight: var(--font-weight-normal);
-    color: var(--color-dark);
-    text-decoration: none;
+    color: var(--color-accent);
+    text-decoration: wavy;
     line-height: var(--leading-snug);
     display: block;
     transition: var(--transition-color);
 
     &:hover {
-      color: var(--color-accent);
-      text-decoration: none;
+      color: var( --color-white);
+      text-decoration: wavy;
     }
 
     @include tablet {

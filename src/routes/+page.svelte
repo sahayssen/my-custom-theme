@@ -8,6 +8,7 @@ This is your page!
   import ArticleBody from '$lib/components/ArticleBody.svelte';
   import Image from '$lib/components/Image.svelte';
   import RelatedLinks from '$lib/components/RelatedLinks.svelte';
+  import SplashHeader from '$lib/components/SplashHeader.svelte';
 
   // Article metadata
   let headline = 'Become a force for good. Join our next class.';
@@ -24,28 +25,30 @@ This is your page!
 
 <!-- This sets the page title in the browser tab -->
 <svelte:head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
   <title>{headline} | NYCity News Service</title>
   <meta name="description" content="At the Craig Newmark Graduate School of Journalism at the City University of New York, change is in our DNA. That comes of being born in 2006, as the digital revolution was transforming our profession in ways none of us could have imagined." />
 </svelte:head>
 
 <!-- Your page content goes here -->
-<div class="container">
-  
-  <!-- Article Header: Headline, byline, and publication date -->
-  <ArticleHeader
-    {headline}
-    {byline}
-    {pubDate}
-  />
-
+<div class="story-theme">
   <!-- Lead Image: Animated gif of students at the journalism school -->
   <Image
-    src="/example-photo.gif"
+    src="/banner.jpg"
     alt="The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan."
-    caption="The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan."
-    credit="Craig Newmark Graduate School of Journalism"
   />
+  <!-- Article Header: Headline, byline, and publication date -->
+<SplashHeader
+  kicker="Sophie's Website"
+  headline="Sophie's First Header"
+  deck="This is a custom header made by Sophie Hayssen for her Coding the News class"
+  pubDate="March 18, 2026"
+/> 
 
+  
+<div class="container">
   <!-- Article Body: The main story text with proper typography -->
   <ArticleBody>
     <p>
@@ -90,5 +93,26 @@ This is your page!
     title="Related Stories"
     links={relatedStories}
   />
-
 </div>
+</div>
+
+<style lang="scss">
+  @use '$lib/styles' as *;
+
+  :global(.story-theme) {
+    --color-background: #e0e0d6;
+    --color-accent:  #d4e07d;
+    --color-border:  #e0e0d6;
+
+    @include mobile {
+      .story-header h1 {
+        font-size: var(--font-size-3xl);
+      }
+
+
+      .deck {
+        font-size: var(--font-size-lg);
+      }
+    }
+}
+</style>

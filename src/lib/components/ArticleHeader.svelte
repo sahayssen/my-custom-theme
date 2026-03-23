@@ -70,11 +70,13 @@ USAGE EXAMPLE:
 
   .article-header {
     margin-bottom: var(--spacing-md);
+    display: block;
+    background-color: var(--color-btn-color);
   }
 
   /* Mobile-first: smaller headline, stacked meta */
   .headline {
-    font-family: var(--font-serif);
+    font-family: var(--font-headline);
     font-size: var(--font-size-5xl);
     font-weight: var(--font-weight-bold);
     line-height: var(--leading-tight);

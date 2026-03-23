@@ -27,8 +27,6 @@ Use it for headers, footers, and navigation that appear on all pages.
     { label: 'Health', href: 'https://www.nycitynewsservice.com/nycns_topics/health/' },
     { label: 'Housing', href: 'https://www.nycitynewsservice.com/nycns_topics/housing/' },
     { label: 'Politics', href: 'https://www.nycitynewsservice.com/nycns_topics/politics/' },
-    { label: 'El Deadline', href: 'https://eldeadline.nycitynewsservice.com/' },
-    { label: 'The Bronx', href: 'https://motthavenherald.com/' },
   ];
 </script>
 
